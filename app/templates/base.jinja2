@@ -3,7 +3,7 @@
 <html class="{{ ' '.join(html_classes) }}{% if g.user %} user-role-{{ g.user.role }}{% endif %}" id="{{ html_id }}" data-csrf-token="{{ csrf_token() }}">
     <head>
         <meta charset="utf-8">
-        <title>{{ page_title|page_title('NEW_APP_TODO') }}</title>
+        <title>{% if request.endpoint == 'index.index' %}Nigel McNie{% else %}{{ page_title|page_title('Nigel McNie') }}{% endif %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ cdn('less/app.css') }}">
     </head>
@@ -19,7 +19,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ url_for('index.index') }}">NEW_APP_TODO</a>
+                    <a class="navbar-brand" href="{{ url_for('index.index') }}">Nigel McNie</a>
                  </div>
 
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -51,7 +51,7 @@
             {% else %}
             <nav class="navbar navbar-default">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">NEW_APP_TODO</a>
+                    <a class="navbar-brand" href="#">Nigel McNie</a>
                 </div>
             </nav>
             {% endif %}
@@ -81,7 +81,6 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div id="footer-title">Footer Here</div>
                     </div>
                 </div>
             </div>
