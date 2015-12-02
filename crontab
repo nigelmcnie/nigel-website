@@ -1,0 +1,10 @@
+# ** WARNING **
+# This file is replaced every deployment from the copy in the repo.
+# If you want to change it, you should change it in the source tree.
+
+MAILTO=nigel@opcode.co.nz
+CRON_COMMAND=/home/nigel-website/nigel-website/bin/app cron
+
+# minute  hour  dom  month  dow  command
+30        2     *    *      *    $CRON_COMMAND remove_old_sessions
+*/2       *     *    *      *    $CRON_COMMAND remove_old_rate_limit_entries
